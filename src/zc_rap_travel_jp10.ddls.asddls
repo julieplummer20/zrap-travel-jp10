@@ -3,7 +3,7 @@
 @EndUserText.label: 'Projection View forTravel'
 @Search.searchable: true
 define root view entity ZC_RAP_TRAVEL_JP10
-  as projection on ZI_RAP_Travel_JP10
+  as projection on ZI_RAP_TRAVEL_JP10
 {
   key TravelUUID,
   
@@ -17,7 +17,10 @@ define root view entity ZC_RAP_TRAVEL_JP10
       element: 'AgencyID'
     }
   } ]
+  @ObjectModel.text.element: ['AgencyName']
+  @Search.defaultSearchElement: true
   AgencyID,
+  _Agency.Name       as AgencyName,
   
   @Consumption.valueHelpDefinition: [ {
     entity: {
@@ -25,7 +28,11 @@ define root view entity ZC_RAP_TRAVEL_JP10
       element: 'CustomerID'
     }
   } ]
+
+  @ObjectModel.text.element: ['CustomerName']
+  @Search.defaultSearchElement: true
   CustomerID,
+  _Customer.LastName as CustomerName,
   
   BeginDate,
   
@@ -59,7 +66,7 @@ define root view entity ZC_RAP_TRAVEL_JP10
   
   LocalLastChangedAt,
   
-  _Booking : redirected to composition child ZC_RAP_Booking_JP10,
+  _Booking : redirected to composition child ZC_RAP_BOOKING_JP10,
   
   _Agency,
   

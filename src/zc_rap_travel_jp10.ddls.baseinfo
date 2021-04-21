@@ -3,6 +3,8 @@
 {
 "FROM":
 [
+"/DMO/I_AGENCY",
+"/DMO/I_CUSTOMER",
 "ZI_RAP_TRAVEL_JP10"
 ],
 "ASSOCIATED":
